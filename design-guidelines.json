@@ -1,0 +1,117 @@
+{
+  "identity": {
+    "name": "E1",
+    "role": "The Anti-AI Designer",
+    "mission": "Create a cinematic, immersive galaxy interface that breaks standard SaaS conventions.",
+    "principles": [
+      "Fusion over Imitation: Mix sci-fi HUDs with elegant typography.",
+      "Emotion First: Every interaction must feel 'weightless' and 'cosmic'.",
+      "Content is King: The ideas (stars) are the heroes.",
+      "Negative Space: The void is as important as the stars."
+    ]
+  },
+  "theme": {
+    "mode": "dark",
+    "palette": {
+      "background": {
+        "void": "#020204",
+        "surface": "#0A0A0A",
+        "card": "rgba(10, 10, 10, 0.6)"
+      },
+      "text": {
+        "primary": "#EDEDED",
+        "secondary": "#A1A1AA",
+        "muted": "#52525B"
+      },
+      "accent": {
+        "primary": "#FF6B00",
+        "secondary": "#FFA500",
+        "glow": "rgba(255, 107, 0, 0.5)",
+        "beam": "rgba(255, 165, 0, 0.2)"
+      },
+      "status": {
+        "spark": "#FFFFFF",
+        "developing": "#FFD700",
+        "refined": "#FF6B00",
+        "completed": "#00E5FF"
+      }
+    },
+    "typography": {
+      "headings": {
+        "family": "Unbounded, sans-serif",
+        "weights": ["300", "600"],
+        "usage": "Hero titles, Section headers, Star labels"
+      },
+      "body": {
+        "family": "Inter, sans-serif",
+        "weights": ["400", "500"],
+        "usage": "Descriptions, UI controls, Notes"
+      }
+    }
+  },
+  "layout_strategy": {
+    "grid": "The Bento Grid (Mode A) for dashboards, Asymmetric layouts for landing.",
+    "spacing": "Generous. Use p-8 to p-12 for containers. Allow the void to breathe.",
+    "alignment": "Optical alignment. Center the galaxy, but offset the controls."
+  },
+  "components": {
+    "GalaxyCanvas": {
+      "description": "Full-screen interactive 2D canvas.",
+      "tech": "HTML5 Canvas or React-Force-Graph-2D (if complex) or Framer Motion (if simple).",
+      "style": "Deep black background, subtle moving starfield layer."
+    },
+    "StarNode": {
+      "description": "Representation of an idea.",
+      "style": "Glowing circle with varying size based on 'maturity'. Pulse animation on hover.",
+      "interaction": "Hover reveals title tooltip. Click opens 'IdeaModal'."
+    },
+    "ConstellationLine": {
+      "description": "Link between related ideas.",
+      "style": "Thin, semi-transparent orange line (1px). Pulses occasionally."
+    },
+    "IdeaModal": {
+      "description": "Editor for ideas.",
+      "style": "Glassmorphism (backdrop-blur-xl), thin orange border, minimal inputs."
+    },
+    "HeroSection": {
+      "description": "Landing page entry.",
+      "style": "Full-screen video background (muted, loop), centered cinematic text, 'Enter Galaxy' button."
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_bg": "https://images.unsplash.com/photo-1615114814213-a245ffc79e9a?q=85&w=1920&auto=format&fit=crop",
+      "nebula_texture": "https://images.unsplash.com/photo-1729722615809-45b3f2ad1747?q=85&w=1920&auto=format&fit=crop",
+      "star_flare": "https://images.unsplash.com/photo-1608483555724-d430b692b776?q=85&w=1920&auto=format&fit=crop"
+    },
+    "video": {
+      "hero_loop": "https://www.youtube.com/embed/E0gxQK72nkk?autoplay=1&mute=1&loop=1&playlist=E0gxQK72nkk&controls=0&showinfo=0&modestbranding=1&start=60"
+    },
+    "icons": {
+      "library": "lucide-react",
+      "style": "Thin stroke (1.5px), small size (16px-20px)."
+    }
+  },
+  "motion": {
+    "transitions": "Slow, smooth ease-out (duration-700).",
+    "hover": "Scale up (1.1), Glow intensity increase.",
+    "entrance": "Fade in + subtle zoom (scale 0.95 -> 1).",
+    "galaxy_drift": "Continuous slow rotation or drift of the entire canvas."
+  },
+  "universal_guidelines": [
+    "DO NOT use gradients for the main background; use solid #020204 with subtle noise/nebula overlays.",
+    "DO NOT use 'Space Grotesk' font (Forbidden). Use 'Unbounded' for that sci-fi feel.",
+    "Ensure all interactive elements have `data-testid`.",
+    "Use `sonner` for toasts.",
+    "Use `lucide-react` for icons.",
+    "Implement a 'Grain' overlay using a fixed div with a noise image and `mix-blend-mode: overlay` to kill digital flatness."
+  ],
+  "instructions_to_main_agent": [
+    "1. Install 'Unbounded' font from Google Fonts.",
+    "2. Set up Tailwind config with the specific 'void' and 'accent' colors.",
+    "3. Create the 'GalaxyCanvas' component first - it's the core.",
+    "4. Use the provided YouTube embed for the Hero video background (ensure it's behind content with z-index -1).",
+    "5. For the 'Idea Evolution', map 'status' to star size/brightness: Spark (Small/Dim) -> Completed (Large/Bright).",
+    "6. Ensure the 'Public Galaxy' page is read-only but still interactive (pan/zoom)."
+  ]
+}
