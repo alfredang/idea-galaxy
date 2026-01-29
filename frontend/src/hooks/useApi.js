@@ -88,6 +88,15 @@ export function useApi() {
     return res.json()
   }
 
+  // AI-powered related ideas
+  async function getRelatedIdeas(ideaId) {
+    return fetchWithAuth(`/ideas/${ideaId}/related`)
+  }
+
+  async function discoverIdeas() {
+    return fetchWithAuth('/discover')
+  }
+
   return {
     getIdeas,
     createIdea,
@@ -96,6 +105,8 @@ export function useApi() {
     getConstellations,
     createConstellation,
     deleteConstellation,
-    getPublicProfile
+    getPublicProfile,
+    getRelatedIdeas,
+    discoverIdeas
   }
 }
